@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced JavaScript Example</title>
+</head>
+<body>
+
+  <h2>JavaScript Objects and DOM Manipulation</h2>
+
+  <p id="objectDemo"></p>
+  <button onclick="displayPerson()">Display Person Details</button>
+
+  <script>
+    // JavaScript Object
+    let person = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 30,
+      fullName: function() {
+        return this.firstName + " " + this.lastName;
+      }
+    };
+
+    // Function to display object details in the HTML element
+    function displayPerson() {
+      document.getElementById("objectDemo").innerHTML = 
+        "Full Name: " + person.fullName() + "<br>" + 
+        "Age: " + person.age;
+    }
+
+    // DOM Manipulation using getElementById and innerHTML
+    document.getElementById("objectDemo").innerHTML = "Click the button to see details!";
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation with Regular Expressions</title>
+</head>
+<body>
+
+  <h2>Form Validation Example</h2>
+
+  <form id="myForm" onsubmit="return validateForm()">
+    Name: <input type="text" id="name" placeholder="Enter your name"><br><br>
+    Email: <input type="text" id="email" placeholder="Enter your email"><br><br>
+    <input type="submit" value="Submit">
+    <p id="validationOutput"></p>
+  </form>
+
+  <script>
+    // Regular Expression for Email Validation
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Basic email pattern
+
+      // Name Validation (Non-empty check)
+      if (name === "") {
+        document.getElementById("validationOutput").innerHTML = "Name cannot be empty!";
+        return false;
+      }
+
+      // Email Validation
+      if (!email.match(emailPattern)) {
+        document.getElementById("validationOutput").innerHTML = "Invalid email format!";
+        return false;
+      }
+
+      // If both validations pass
+      document.getElementById("validationOutput").innerHTML = "Form is valid!";
+      return true;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic JavaScript Example</title>
+</head>
+<body>
+
+  <h2>Welcome to Basic JS</h2>
+
+  <button onclick="showAlert()">Click me</button>
+
+  <p id="demo"></p>
+
+  <script>
+    // Alert Example
+    function showAlert() {
+      alert("Hello, welcome to JavaScript!");
+    }
+
+    // Document example
+    document.getElementById("demo").innerHTML = "This is JavaScript!";
+
+    // Arrays, Loops, and Conditions
+    let numbers = [1, 2, 3, 4, 5];
+    let output = "";
+
+    for(let i = 0; i < numbers.length; i++) {
+      if(numbers[i] % 2 === 0) {
+        output += numbers[i] + " is even<br>";
+      } else {
+        output += numbers[i] + " is odd<br>";
+      }
+    }
+
+    document.write(output);
+  </script>
+
+</body>
+</html>
